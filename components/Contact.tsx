@@ -230,7 +230,7 @@ export default function Contact() {
                                         required
                                         type="text"
                                         placeholder="Your name"
-                                        className="form-input w-full text-fg font-syne text-[14px] py-3"
+                                        className="form-input w-full text-fg font-syne text-[14px] py-3 px-4"
                                     />
                                 </div>
                                 <div>
@@ -242,7 +242,7 @@ export default function Contact() {
                                         required
                                         type="email"
                                         placeholder="your@email.com"
-                                        className="form-input w-full text-fg font-syne text-[14px] py-3"
+                                        className="form-input w-full text-fg font-syne text-[14px] py-3 px-4"
                                     />
                                 </div>
                             </div>
@@ -252,7 +252,7 @@ export default function Contact() {
                                 </label>
                                 <select
                                     ref={serviceRef}
-                                    className="form-input w-full text-fg font-syne text-[14px] py-3 pr-4"
+                                    className="form-input w-full text-fg font-syne text-[14px] py-3 px-4"
                                 >
                                     <option value="">Select a service</option>
                                     <option>UI / UX Design</option>
@@ -273,7 +273,7 @@ export default function Contact() {
                                     required
                                     rows={4}
                                     placeholder="Tell me about your project..."
-                                    className="form-input w-full text-fg font-syne text-[14px] py-3 resize-none leading-[1.65]"
+                                    className="form-input w-full text-fg font-syne text-[14px] py-3 px-4 resize-none leading-[1.65]"
                                 />
                             </div>
                             {state === 'error' && (
