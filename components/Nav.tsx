@@ -19,6 +19,8 @@ const links = [
     { label: 'Contact', href: 'contact' },
 ];
 
+const clearOnView = ['quote'];
+
 function MagLink({
     label,
     href,
@@ -125,6 +127,7 @@ export default function Nav({ visible }: NavProps) {
                 if (menuOpen) return;
                 const scroll = self.scroll();
                 if (scroll < 80) {
+                    setActive('');
                     gsap.to(navRef.current, { yPercent: 0, duration: 0.4 });
                     return;
                 }
@@ -158,10 +161,24 @@ export default function Nav({ visible }: NavProps) {
             return obs;
         });
 
+        const clearObservers = clearOnView.map((id) => {
+            const el = document.getElementById(id);
+            if (!el) return null;
+            const obs = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) setActive('');
+                },
+                { rootMargin: '-40% 0px -40% 0px' },
+            );
+            obs.observe(el);
+            return obs;
+        });
+
         return () => {
             st.kill();
             window.removeEventListener('scroll', onScroll);
             observers.forEach((o) => o?.disconnect());
+            clearObservers.forEach((o) => o?.disconnect());
         };
     }, [visible, menuOpen]);
 
@@ -182,6 +199,7 @@ export default function Nav({ visible }: NavProps) {
                     href="#"
                     onClick={(e) => {
                         e.preventDefault();
+                        setActive('');
                         gsap.to(window, {
                             scrollTo: 0,
                             duration: 1.2,

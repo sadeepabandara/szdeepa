@@ -66,6 +66,7 @@ export default function Quote({ data }: { data?: QuoteData | null }) {
     return (
         <section
             ref={sectionRef}
+            id="quote"
             className="px-6 md:px-14 py-20 md:py-32 bg-bg border-b"
             style={{ borderColor: 'var(--line)' }}
         >
