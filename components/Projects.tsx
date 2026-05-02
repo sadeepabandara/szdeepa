@@ -318,6 +318,37 @@ export default function Projects({
                 },
             );
         });
+
+        const section = sectionRef.current;
+        if (!section) return;
+
+        const ctx = gsap.context(() => {
+            section
+                .querySelectorAll<HTMLElement>('.proj-title-fill')
+                .forEach((fill) => {
+                    const row = fill.closest<HTMLElement>('.proj-item');
+                    if (!row) return;
+
+                    gsap.fromTo(
+                        fill,
+                        { clipPath: 'inset(0 100% 0 0)' },
+                        {
+                            clipPath: 'inset(0 0% 0 0)',
+                            ease: 'none',
+                            scrollTrigger: {
+                                trigger: row,
+                                start: 'top 100%',
+                                end: 'top 5%',
+                                scrub: 1.1,
+                            },
+                        },
+                    );
+                });
+        }, section);
+
+        return () => {
+            ctx.revert();
+        };
     }, []);
 
     const handleMouseEnter = useCallback(
@@ -402,8 +433,26 @@ export default function Projects({
                                 {p.number}
                             </span>
                             <div>
-                                <h3 className="text-[clamp(18px,3vw,38px)] font-extrabold tracking-[-0.025em] leading-none mb-2 transition-colors duration-300 group-hover:text-or">
-                                    {p.title}
+                                <h3 className="relative text-[clamp(18px,3vw,38px)] font-extrabold tracking-[-0.025em] leading-none mb-2 transition-colors duration-300 group-hover:text-or">
+                                    <span className="sr-only">{p.title}</span>
+                                    <span
+                                        aria-hidden="true"
+                                        className="block"
+                                        style={{ color: 'rgba(245,240,232,0.2)' }}
+                                    >
+                                        {p.title}
+                                    </span>
+                                    <span
+                                        aria-hidden="true"
+                                        className="proj-title-fill absolute inset-0 block"
+                                        style={{
+                                            color: 'var(--fg)',
+                                            clipPath: 'inset(0 100% 0 0)',
+                                            willChange: 'clip-path',
+                                        }}
+                                    >
+                                        {p.title}
+                                    </span>
                                 </h3>
                                 <div className="flex gap-2 flex-wrap">
                                     {p.tags.map((t) => (
