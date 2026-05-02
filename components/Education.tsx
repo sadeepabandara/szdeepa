@@ -175,7 +175,7 @@ export default function Education({ data }: { data?: EduItem[] }) {
                             style={{
                                 top: '50%',
                                 height: 1,
-                                background: 'rgba(255,94,26,0.1)',
+                                background: 'var(--fg3)',
                             }}
                         />
 
@@ -186,7 +186,7 @@ export default function Education({ data }: { data?: EduItem[] }) {
                             style={{
                                 top: '50%',
                                 height: 1,
-                                background: 'rgba(255,94,26,0.5)',
+                                background: 'var(--or)',
                                 transformOrigin: 'left center',
                                 transform: 'scaleX(0.5)',
                             }}
@@ -229,10 +229,10 @@ export default function Education({ data }: { data?: EduItem[] }) {
                                                     width: 22,
                                                     height: 22,
                                                     borderRadius: '50%',
-                                                    background: '#0a0a08',
-                                                    border: '2px solid #ff5e1a',
+                                                    background: 'var(--bg)',
+                                                    border: '2px solid var(--or)',
                                                     boxShadow:
-                                                        '0 0 0 6px rgba(255,94,26,0.1), 0 0 16px rgba(255,94,26,0.2)',
+                                                        '0 0 0 6px var(--or-dim), 0 0 16px var(--or-ln)',
                                                     position: 'relative',
                                                 }}
                                             >
@@ -241,7 +241,7 @@ export default function Education({ data }: { data?: EduItem[] }) {
                                                         position: 'absolute',
                                                         inset: 4,
                                                         borderRadius: '50%',
-                                                        background: '#ff5e1a',
+                                                        background: 'var(--or)',
                                                     }}
                                                 />
                                             </div>
@@ -263,7 +263,7 @@ export default function Education({ data }: { data?: EduItem[] }) {
                                             >
                                                 <span
                                                     className="font-mono text-[11px] tracking-[0.22em] uppercase mb-3 block"
-                                                    style={{ color: '#ff5e1a' }}
+                                                    style={{ color: 'var(--or)' }}
                                                 >
                                                     {item.period}
                                                 </span>
@@ -272,7 +272,7 @@ export default function Education({ data }: { data?: EduItem[] }) {
                                                     style={{
                                                         fontSize:
                                                             'clamp(18px, 2vw, 28px)',
-                                                        color: 'rgba(245,240,232,0.92)',
+                                                        color: 'var(--fg)',
                                                     }}
                                                 >
                                                     {item.degree}
@@ -280,7 +280,7 @@ export default function Education({ data }: { data?: EduItem[] }) {
                                                 <span
                                                     className="text-[13px] md:text-[14px] font-semibold mb-3 block"
                                                     style={{
-                                                        color: 'rgba(245,240,232,0.4)',
+                                                        color: 'var(--fg2)',
                                                     }}
                                                 >
                                                     {item.institution}
@@ -288,7 +288,7 @@ export default function Education({ data }: { data?: EduItem[] }) {
                                                 <p
                                                     className="text-[12px] md:text-[13px] leading-[1.8]"
                                                     style={{
-                                                        color: 'rgba(245,240,232,0.28)',
+                                                        color: 'var(--fg-muted)',
                                                     }}
                                                 >
                                                     {item.description}
@@ -324,7 +324,7 @@ export default function Education({ data }: { data?: EduItem[] }) {
                         <div
                             key={i}
                             className="border-l-2 pl-5"
-                            style={{ borderColor: 'rgba(255,94,26,0.4)' }}
+                            style={{ borderColor: 'rgba(235,89,57,0.4)' }}
                         >
                             <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-or block mb-1">
                                 {item.period}
@@ -335,7 +335,7 @@ export default function Education({ data }: { data?: EduItem[] }) {
                             <span className="text-[13px] text-fg/40 font-semibold block mb-2">
                                 {item.institution}
                             </span>
-                            <p className="text-[12px] text-fg/30 leading-[1.7]">
+                            <p className="text-[12px] text-fg/40 leading-[1.7]">
                                 {item.description}
                             </p>
                         </div>

@@ -174,9 +174,9 @@ export default function Services({ data }: ServicesProps) {
                         </h2>
                     </div>
                     <div className="flex flex-col items-end gap-2.5 pb-1">
-                        <div className="font-mono text-[11px] tracking-[0.14em] text-fg/30 flex items-center gap-3">
+                        <div className="font-mono text-[11px] tracking-[0.14em] flex items-center gap-3" style={{ color: 'var(--fg-muted)' }}>
                             <span ref={counterRef}>01</span>
-                            <span className="text-fg/15">/</span>
+                            <span style={{ color: 'var(--fg-muted)' }}>/</span>
                             <span>0{services.length}</span>
                             <div
                                 className="w-[100px] h-px relative overflow-hidden"
@@ -188,7 +188,7 @@ export default function Services({ data }: ServicesProps) {
                                 />
                             </div>
                         </div>
-                        <span className="text-[10px] tracking-[0.18em] uppercase text-fg/20">
+                        <span className="text-[10px] tracking-[0.18em] uppercase" style={{ color: 'var(--fg-muted)' }}>
                             Drag to explore
                         </span>
                     </div>

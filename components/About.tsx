@@ -98,7 +98,7 @@ export default function About({ data }: { data?: AboutData | null }) {
                         style={{ filter: 'grayscale(10%) contrast(1.05)' }}
                     />
                 </div>
-                <p className="mt-3 font-mono text-[10px] tracking-[0.18em] uppercase text-fg/25 text-center md:text-left">
+                <p className="mt-3 font-mono text-[10px] tracking-[0.18em] uppercase text-center md:text-left" style={{ color: 'var(--fg-muted)' }}>
                     © Sadeepa — The Creative
                 </p>
             </div>
@@ -133,7 +133,8 @@ export default function About({ data }: { data?: AboutData | null }) {
                             href={d.github_url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-mono text-[10px] tracking-[0.14em] uppercase text-fg/40 border border-fg/10 px-3 py-2 hover:border-or/50 hover:text-or transition-colors duration-300 no-underline flex items-center gap-2"
+                            className="font-mono text-[10px] tracking-[0.14em] uppercase border border-fg/10 px-3 py-2 hover:border-or/50 hover:text-or transition-colors duration-300 no-underline flex items-center gap-2"
+                            style={{ color: 'var(--fg-muted)' }}
                         >
                             <svg
                                 width="13"
@@ -151,7 +152,8 @@ export default function About({ data }: { data?: AboutData | null }) {
                             href={d.linkedin_url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-mono text-[10px] tracking-[0.14em] uppercase text-fg/40 border border-fg/10 px-3 py-2 hover:border-or/50 hover:text-or transition-colors duration-300 no-underline flex items-center gap-2"
+                            className="font-mono text-[10px] tracking-[0.14em] uppercase border border-fg/10 px-3 py-2 hover:border-or/50 hover:text-or transition-colors duration-300 no-underline flex items-center gap-2"
+                            style={{ color: 'var(--fg-muted)' }}
                         >
                             <svg
                                 width="13"
@@ -169,7 +171,8 @@ export default function About({ data }: { data?: AboutData | null }) {
                             href={d.resume_url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-mono text-[10px] tracking-[0.14em] uppercase text-fg/40 border border-fg/10 px-3 py-2 hover:border-or/50 hover:text-or transition-colors duration-300 no-underline flex items-center gap-2"
+                            className="font-mono text-[10px] tracking-[0.14em] uppercase border border-fg/10 px-3 py-2 hover:border-or/50 hover:text-or transition-colors duration-300 no-underline flex items-center gap-2"
+                            style={{ color: 'var(--fg-muted)' }}
                         >
                             <svg
                                 width="13"
@@ -203,7 +206,7 @@ export default function About({ data }: { data?: AboutData | null }) {
                             <div className="text-[32px] md:text-[42px] font-extrabold tracking-[-0.03em] leading-none mb-1.5 text-or">
                                 <CountUp value={s.num} />
                             </div>
-                            <div className="text-[9px] md:text-[10px] tracking-[0.15em] uppercase text-fg/25">
+                            <div className="text-[9px] md:text-[10px] tracking-[0.15em] uppercase" style={{ color: 'var(--fg-muted)' }}>
                                 {s.label}
                             </div>
                         </div>

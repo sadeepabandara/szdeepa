@@ -458,12 +458,13 @@ export default function Projects({
                                     {p.tags.map((t) => (
                                         <span
                                             key={t}
-                                            className="text-[9px] md:text-[10px] tracking-[0.1em] uppercase text-fg/25 border border-fg/[0.07] px-2 py-[3px]"
+                                            className="text-[9px] md:text-[10px] tracking-[0.1em] uppercase border border-fg/[0.07] px-2 py-[3px]"
+                                            style={{ color: 'var(--fg-muted)' }}
                                         >
                                             {t}
                                         </span>
                                     ))}
-                                    <span className="text-[9px] md:text-[10px] tracking-[0.1em] uppercase text-fg/25 border border-fg/[0.07] px-2 py-[3px]">
+                                    <span className="text-[9px] md:text-[10px] tracking-[0.1em] uppercase border border-fg/[0.07] px-2 py-[3px]" style={{ color: 'var(--fg-muted)' }}>
                                         {p.year}
                                     </span>
                                 </div>

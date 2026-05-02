@@ -339,7 +339,7 @@ export default function FlappyGame() {
                             Play a round.
                         </em>
                     </h2>
-                    <p className="text-[13px] text-fg/35 leading-[1.75] max-w-[340px]">
+                    <p className="text-[13px] text-fg/50 leading-[1.75] max-w-[340px]">
                         A little Flappy Bird built into the portfolio. Tap,
                         click or press Space to flap. Can you beat the global
                         best?
@@ -403,18 +403,18 @@ export default function FlappyGame() {
                                 >
                                     Flappy
                                 </span>
-                                <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-fg/20">
+                                <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-fg/40">
                                     Score: {score}
                                 </span>
                                 {best > 0 && (
-                                    <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-fg/20">
+                                        <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-fg/40">
                                         🏆 Best: {best}
                                     </span>
                                 )}
                             </div>
                             <button
                                 onClick={() => setOpen(false)}
-                                className="font-mono text-[11px] tracking-[0.1em] uppercase text-fg/30 hover:text-or transition-colors duration-200 cursor-none"
+                                className="font-mono text-[11px] tracking-[0.1em] uppercase text-fg/40 hover:text-or transition-colors duration-200 cursor-none"
                             >
                                 ESC / Close
                             </button>

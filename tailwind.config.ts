@@ -9,14 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#0a0a08",
-        bg2: "#0f0e0b",
+        bg: "#0d0d0d",
+        bg2: "#111111",
         bg3: "#141310",
         bg4: "#1a1916",
-        or: "#ff5e1a",
-        or2: "#ff7a3d",
-        or3: "#ff3d00",
-        fg: "#f5f0e8",
+        or: "#eb5939",
+        or2: "#f06f52",
+        or3: "#d94c2f",
+        fg: "#b7ab98",
       },
       fontFamily: {
         syne: ["var(--font-syne)", "sans-serif"],
