@@ -1,4 +1,4 @@
-# Sadeepa Portfolio — Next.js + TypeScript + Tailwind + Supabase
+# Sadeepa's Portfolio — Next.js + TypeScript + Tailwind + Supabase
 
 ## Tech Stack
 - **Framework**: Next.js 14 (App Router)
