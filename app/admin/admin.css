@@ -1,6 +1,7 @@
 .admin-root,
 .admin-root * {
     cursor: auto !important;
+    font-family: var(--font-syne), sans-serif !important;
 }
 .admin-root button,
 .admin-root a,

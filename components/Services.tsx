@@ -174,7 +174,7 @@ export default function Services({ data }: ServicesProps) {
                         </h2>
                     </div>
                     <div className="flex flex-col items-end gap-2.5 pb-1">
-                        <div className="font-mono text-[11px] tracking-[0.14em] flex items-center gap-3" style={{ color: 'var(--fg-muted)' }}>
+                        <div className="font-syne text-[11px] tracking-[0.14em] flex items-center gap-3" style={{ color: 'var(--fg-muted)' }}>
                             <span ref={counterRef}>01</span>
                             <span style={{ color: 'var(--fg-muted)' }}>/</span>
                             <span>0{services.length}</span>
@@ -226,7 +226,7 @@ export default function Services({ data }: ServicesProps) {
                                 }}
                             >
                                 <div>
-                                    <div className="font-mono text-[10px] tracking-[0.2em] text-or/40 mb-6">
+                                    <div className="font-syne text-[10px] tracking-[0.2em] text-or/40 mb-6">
                                         {s.num}
                                     </div>
                                     <span className="text-[28px] mb-4 block text-or">
@@ -278,7 +278,7 @@ export default function Services({ data }: ServicesProps) {
                             className="bg-bg3 border border-fg/[0.06] p-7 flex flex-col justify-between relative overflow-hidden min-h-[260px]"
                         >
                             <div>
-                                <div className="font-mono text-[10px] tracking-[0.2em] text-or/40 mb-4">
+                                <div className="font-syne text-[10px] tracking-[0.2em] text-or/40 mb-4">
                                     {s.num}
                                 </div>
                                 <span className="text-[24px] mb-3 block text-or">

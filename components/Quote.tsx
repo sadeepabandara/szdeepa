@@ -177,7 +177,7 @@ export default function Quote({ data, onCursorVisibilityChange }: QuoteProps) {
 
                     <div className="flex items-center gap-4">
                         <span className="w-10 h-px block flex-shrink-0" style={{ background: 'rgba(255,94,26,0.5)' }} />
-                        <span className="font-mono tracking-[0.22em] uppercase" style={{ color: 'rgba(255,94,26,0.7)', fontSize: '11px' }}>
+                        <span className="font-syne tracking-[0.22em] uppercase" style={{ color: 'rgba(255,94,26,0.7)', fontSize: '11px' }}>
                             {d.author}
                         </span>
                     </div>
@@ -232,7 +232,7 @@ export default function Quote({ data, onCursorVisibilityChange }: QuoteProps) {
 
                         <div className="flex items-center gap-4">
                             <span className="w-10 h-px block flex-shrink-0" style={{ background: '#000' }} />
-                            <span className="font-mono tracking-[0.22em] uppercase" style={{ color: '#000', fontSize: '11px' }}>
+                            <span className="font-syne tracking-[0.22em] uppercase" style={{ color: '#000', fontSize: '11px' }}>
                                 Warren Buffett
                             </span>
                         </div>

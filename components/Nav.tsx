@@ -78,21 +78,25 @@ function MagLink({
             ref={btnRef}
             data-nav={href}
             onClick={onClick}
-            className="text-[11px] tracking-[0.12em] uppercase font-semibold cursor-none bg-transparent border-none p-0 relative"
+            className="text-[11px] tracking-[0.12em] uppercase font-semibold cursor-none bg-transparent border-none pl-3 pr-0 py-0 relative"
             style={{
-                color: active ? 'var(--or)' : 'rgba(245,240,232,0.3)',
+                color: active ? 'var(--or)' : 'rgba(245,240,232,0.35)',
                 transition: 'color 0.2s',
                 display: 'inline-block',
                 willChange: 'transform',
             }}
         >
-            {label}
-            {active && (
-                <span
-                    className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-or"
-                    style={{ boxShadow: '0 0 6px rgba(255,94,26,0.8)' }}
-                />
-            )}
+            <span
+                className="absolute left-1/2 -translate-x-1/2 top-[-44px] w-[1.2px] origin-top"
+                style={{
+                    height: '38px',
+                    background: 'var(--or)',
+                    transform: active ? 'scaleY(1)' : 'scaleY(0)',
+                    opacity: active ? 1 : 0,
+                    transition: 'transform 0.22s ease, opacity 0.22s ease',
+                }}
+            />
+            <span>{label}</span>
         </button>
     );
 }

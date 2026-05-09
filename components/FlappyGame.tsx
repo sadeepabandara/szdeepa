@@ -369,11 +369,11 @@ export default function FlappyGame() {
                             Play Now
                         </div>
                         {best > 0 ? (
-                            <div className="font-mono text-[10px] text-or/60 tracking-[0.1em] mt-0.5">
+                            <div className="font-syne text-[10px] text-or/60 tracking-[0.1em] mt-0.5">
                                 🏆 Global Best: {best}
                             </div>
                         ) : (
-                            <div className="font-mono text-[10px] text-or/30 tracking-[0.1em] mt-0.5">
+                            <div className="font-syne text-[10px] text-or/30 tracking-[0.1em] mt-0.5">
                                 Be the first to score!
                             </div>
                         )}
@@ -398,23 +398,23 @@ export default function FlappyGame() {
                         <div className="flex items-center justify-between w-full mb-3 px-1">
                             <div className="flex items-center gap-3">
                                 <span
-                                    className="font-mono text-[10px] tracking-[0.2em] uppercase"
+                                    className="font-syne text-[10px] tracking-[0.2em] uppercase"
                                     style={{ color: 'rgba(255,94,26,0.6)' }}
                                 >
                                     Flappy
                                 </span>
-                                <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-fg/40">
+                                <span className="font-syne text-[10px] tracking-[0.2em] uppercase text-fg/40">
                                     Score: {score}
                                 </span>
                                 {best > 0 && (
-                                        <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-fg/40">
+                                        <span className="font-syne text-[10px] tracking-[0.2em] uppercase text-fg/40">
                                         🏆 Best: {best}
                                     </span>
                                 )}
                             </div>
                             <button
                                 onClick={() => setOpen(false)}
-                                className="font-mono text-[11px] tracking-[0.1em] uppercase text-fg/40 hover:text-or transition-colors duration-200 cursor-none"
+                                className="font-syne text-[11px] tracking-[0.1em] uppercase text-fg/40 hover:text-or transition-colors duration-200 cursor-none"
                             >
                                 ESC / Close
                             </button>
@@ -433,7 +433,7 @@ export default function FlappyGame() {
                                 maxHeight: '80vh',
                             }}
                         />
-                        <p className="font-mono text-[9px] tracking-[0.15em] uppercase text-fg/15 mt-3">
+                        <p className="font-syne text-[9px] tracking-[0.15em] uppercase text-fg/15 mt-3">
                             Space / Click / Tap to flap
                         </p>
                     </div>

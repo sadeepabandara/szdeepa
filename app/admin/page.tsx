@@ -48,21 +48,21 @@ export default function AdminLogin() {
                         />
                         <span
                             style={{
-                                fontFamily: 'monospace',
-                                fontSize: 18,
-                                fontWeight: 800,
-                                letterSpacing: '0.15em',
-                                color: 'rgba(245,240,232,0.85)',
-                                textTransform: 'uppercase',
-                            }}
+                                    fontFamily: 'var(--font-syne), sans-serif',
+                                    fontSize: 18,
+                                    fontWeight: 800,
+                                    letterSpacing: '0.15em',
+                                    color: 'rgba(245,240,232,0.85)',
+                                    textTransform: 'uppercase',
+                                }}
                         >
                             SADEEPA<span style={{ color: '#ff5e1a' }}>.</span>
                         </span>
                     </div>
                     <p
                         style={{
-                            fontFamily: 'monospace',
-                            fontSize: 10,
+                            fontFamily: 'var(--font-syne), sans-serif',
+                            fontSize: 14,
                             letterSpacing: '0.3em',
                             textTransform: 'uppercase',
                             color: 'rgba(255,94,26,0.6)',
@@ -84,8 +84,8 @@ export default function AdminLogin() {
                     <div>
                         <label
                             style={{
-                                fontFamily: 'monospace',
-                                fontSize: 10,
+                                fontFamily: 'var(--font-syne), sans-serif',
+                                fontSize: 14,
                                 letterSpacing: '0.2em',
                                 textTransform: 'uppercase',
                                 color: 'rgba(245,240,232,0.3)',
@@ -106,8 +106,8 @@ export default function AdminLogin() {
                                 background: 'rgba(245,240,232,0.04)',
                                 border: '1px solid rgba(255,94,26,0.2)',
                                 color: 'rgba(245,240,232,0.85)',
-                                fontFamily: 'monospace',
-                                fontSize: 13,
+                                fontFamily: 'var(--font-syne), sans-serif',
+                                fontSize: 16,
                                 outline: 'none',
                                 boxSizing: 'border-box',
                             }}
@@ -124,8 +124,8 @@ export default function AdminLogin() {
                     <div>
                         <label
                             style={{
-                                fontFamily: 'monospace',
-                                fontSize: 10,
+                                fontFamily: 'var(--font-syne), sans-serif',
+                                fontSize: 14,
                                 letterSpacing: '0.2em',
                                 textTransform: 'uppercase',
                                 color: 'rgba(245,240,232,0.3)',
@@ -146,8 +146,8 @@ export default function AdminLogin() {
                                 background: 'rgba(245,240,232,0.04)',
                                 border: '1px solid rgba(255,94,26,0.2)',
                                 color: 'rgba(245,240,232,0.85)',
-                                fontFamily: 'monospace',
-                                fontSize: 13,
+                                fontFamily: 'var(--font-syne), sans-serif',
+                                fontSize: 16,
                                 outline: 'none',
                                 boxSizing: 'border-box',
                             }}
@@ -165,13 +165,13 @@ export default function AdminLogin() {
                     {error && (
                         <div
                             style={{
-                                fontFamily: 'monospace',
-                                fontSize: 11,
-                                color: '#f87171',
-                                padding: '10px 14px',
-                                background: 'rgba(248,113,113,0.08)',
-                                border: '1px solid rgba(248,113,113,0.2)',
-                            }}
+                                    fontFamily: 'var(--font-syne), sans-serif',
+                                    fontSize: 14,
+                                    color: '#f87171',
+                                    padding: '10px 14px',
+                                    background: 'rgba(248,113,113,0.08)',
+                                    border: '1px solid rgba(248,113,113,0.2)',
+                                }}
                         >
                             {error}
                         </div>
@@ -187,8 +187,8 @@ export default function AdminLogin() {
                                 ? 'rgba(255,94,26,0.4)'
                                 : '#ff5e1a',
                             color: '#0a0a08',
-                            fontFamily: 'monospace',
-                            fontSize: 11,
+                            fontFamily: 'var(--font-syne), sans-serif',
+                            fontSize: 14,
                             fontWeight: 700,
                             letterSpacing: '0.2em',
                             textTransform: 'uppercase',
@@ -202,11 +202,11 @@ export default function AdminLogin() {
                 </form>
 
                 <p
-                    style={{
+                        style={{
                         marginTop: 32,
                         textAlign: 'center',
-                        fontFamily: 'monospace',
-                        fontSize: 9,
+                        fontFamily: 'var(--font-syne), sans-serif',
+                        fontSize: 14,
                         letterSpacing: '0.15em',
                         textTransform: 'uppercase',
                         color: 'rgba(245,240,232,0.12)',

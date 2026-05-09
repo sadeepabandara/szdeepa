@@ -39,8 +39,8 @@ function StatCard({
         >
             <div
                 style={{
-                    fontFamily: 'monospace',
-                    fontSize: 9,
+                    fontFamily: 'var(--font-syne), sans-serif',
+                    fontSize: 14,
                     letterSpacing: '0.25em',
                     textTransform: 'uppercase',
                     color: 'rgba(255,94,26,0.5)',
@@ -63,11 +63,11 @@ function StatCard({
             {sub && (
                 <div
                     style={{
-                        fontFamily: 'monospace',
-                        fontSize: 10,
-                        color: 'rgba(245,240,232,0.2)',
-                        marginTop: 6,
-                    }}
+                            fontFamily: 'var(--font-syne), sans-serif',
+                            fontSize: 14,
+                            color: 'rgba(245,240,232,0.2)',
+                            marginTop: 6,
+                        }}
                 >
                     {sub}
                 </div>
@@ -92,15 +92,15 @@ function Input({
     placeholder?: string;
     rows?: number;
 }) {
-    const base: React.CSSProperties = {
+        const base: React.CSSProperties = {
         width: '100%',
         padding: '10px 14px',
         boxSizing: 'border-box',
         background: 'rgba(245,240,232,0.04)',
         border: '1px solid rgba(255,94,26,0.15)',
         color: 'rgba(245,240,232,0.85)',
-        fontFamily: 'monospace',
-        fontSize: 13,
+            fontFamily: 'var(--font-syne), sans-serif',
+        fontSize: 16,
         outline: 'none',
         resize: 'vertical' as const,
     };
@@ -108,8 +108,8 @@ function Input({
         <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
             <label
                 style={{
-                    fontFamily: 'monospace',
-                    fontSize: 9,
+                    fontFamily: 'var(--font-syne), sans-serif',
+                    fontSize: 14,
                     letterSpacing: '0.2em',
                     textTransform: 'uppercase',
                     color: 'rgba(245,240,232,0.3)',
@@ -169,10 +169,10 @@ function Btn({
         <button
             onClick={onClick}
             disabled={disabled}
-            style={{
+                style={{
                 ...styles[variant],
                 padding: small ? '6px 14px' : '10px 20px',
-                fontFamily: 'monospace',
+                fontFamily: 'var(--font-syne), sans-serif',
                 fontSize: small ? 10 : 11,
                 fontWeight: 700,
                 letterSpacing: '0.12em',
@@ -233,7 +233,7 @@ function Modal({
                     <span
                         style={{
                             fontFamily: 'monospace',
-                            fontSize: 11,
+                            fontSize: 14,
                             letterSpacing: '0.2em',
                             textTransform: 'uppercase',
                             color: 'rgba(255,94,26,0.8)',
@@ -355,14 +355,14 @@ function ProjectsTab() {
                     marginBottom: 24,
                 }}
             >
-                <span
-                    style={{
-                        fontFamily: 'monospace',
-                        fontSize: 10,
-                        letterSpacing: '0.2em',
-                        textTransform: 'uppercase',
-                        color: 'rgba(245,240,232,0.3)',
-                    }}
+                    <span
+                        style={{
+                            fontFamily: 'var(--font-syne), sans-serif',
+                            fontSize: 14,
+                            letterSpacing: '0.2em',
+                            textTransform: 'uppercase',
+                            color: 'rgba(245,240,232,0.3)',
+                        }}
                 >
                     {rows.length} projects
                 </span>
@@ -384,7 +384,7 @@ function ProjectsTab() {
                         <span
                             style={{
                                 fontFamily: 'monospace',
-                                fontSize: 10,
+                                fontSize: 14,
                                 color: 'rgba(255,94,26,0.5)',
                                 minWidth: 32,
                             }}
@@ -404,8 +404,8 @@ function ProjectsTab() {
                             </div>
                             <div
                                 style={{
-                                    fontFamily: 'monospace',
-                                    fontSize: 10,
+                                    fontFamily: 'var(--font-syne), sans-serif',
+                                    fontSize: 14,
                                     color: 'rgba(245,240,232,0.25)',
                                 }}
                             >
@@ -418,8 +418,8 @@ function ProjectsTab() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 style={{
-                                    fontFamily: 'monospace',
-                                    fontSize: 9,
+                                    fontFamily: 'var(--font-syne), sans-serif',
+                                    fontSize: 14,
                                     color: 'rgba(255,94,26,0.5)',
                                     textDecoration: 'none',
                                 }}
@@ -609,9 +609,9 @@ function TestimonialsTab() {
                 }}
             >
                 <span
-                    style={{
-                        fontFamily: 'monospace',
-                        fontSize: 10,
+                        style={{
+                        fontFamily: 'var(--font-syne), sans-serif',
+                        fontSize: 14,
                         letterSpacing: '0.2em',
                         textTransform: 'uppercase',
                         color: 'rgba(245,240,232,0.3)',
@@ -656,8 +656,8 @@ function TestimonialsTab() {
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
-                                        fontFamily: 'monospace',
-                                        fontSize: 10,
+                                        fontFamily: 'var(--font-syne), sans-serif',
+                                        fontSize: 14,
                                         fontWeight: 700,
                                         color: '#ff5e1a',
                                     }}
@@ -667,7 +667,7 @@ function TestimonialsTab() {
                                 <div>
                                     <div
                                         style={{
-                                            fontSize: 13,
+                                            fontSize: 16,
                                             fontWeight: 700,
                                             color: 'rgba(245,240,232,0.85)',
                                         }}
@@ -677,7 +677,7 @@ function TestimonialsTab() {
                                     <div
                                         style={{
                                             fontFamily: 'monospace',
-                                            fontSize: 10,
+                                            fontSize: 14,
                                             color: 'rgba(245,240,232,0.25)',
                                         }}
                                     >
@@ -704,7 +704,7 @@ function TestimonialsTab() {
                         </div>
                         <p
                             style={{
-                                fontSize: 12,
+                                fontSize: 15,
                                 color: 'rgba(245,240,232,0.3)',
                                 lineHeight: 1.7,
                                 margin: 0,
@@ -910,7 +910,7 @@ function ServicesTab() {
                 <span
                     style={{
                         fontFamily: 'monospace',
-                        fontSize: 10,
+                        fontSize: 14,
                         letterSpacing: '0.2em',
                         textTransform: 'uppercase',
                         color: 'rgba(245,240,232,0.3)',
@@ -951,7 +951,7 @@ function ServicesTab() {
                             <div
                                 style={{
                                     fontFamily: 'monospace',
-                                    fontSize: 10,
+                                    fontSize: 14,
                                     color: 'rgba(245,240,232,0.25)',
                                 }}
                             >
@@ -1148,7 +1148,7 @@ function EducationTab() {
                 <span
                     style={{
                         fontFamily: 'monospace',
-                        fontSize: 10,
+                        fontSize: 14,
                         letterSpacing: '0.2em',
                         textTransform: 'uppercase',
                         color: 'rgba(245,240,232,0.3)',
@@ -1183,7 +1183,7 @@ function EducationTab() {
                                 <span
                                     style={{
                                         fontFamily: 'monospace',
-                                        fontSize: 10,
+                                        fontSize: 14,
                                         color: '#ff5e1a',
                                     }}
                                 >
@@ -1192,7 +1192,7 @@ function EducationTab() {
                                 <span
                                     style={{
                                         fontFamily: 'monospace',
-                                        fontSize: 9,
+                                        fontSize: 14,
                                         color: 'rgba(255,94,26,0.3)',
                                         border: '1px solid rgba(255,94,26,0.2)',
                                         padding: '1px 6px',
@@ -1214,7 +1214,7 @@ function EducationTab() {
                             <div
                                 style={{
                                     fontFamily: 'monospace',
-                                    fontSize: 10,
+                                    fontSize: 14,
                                     color: 'rgba(245,240,232,0.25)',
                                 }}
                             >
@@ -1267,7 +1267,7 @@ function EducationTab() {
                                 <label
                                     style={{
                                         fontFamily: 'monospace',
-                                        fontSize: 9,
+                                        fontSize: 14,
                                         letterSpacing: '0.2em',
                                         textTransform: 'uppercase',
                                         color: 'rgba(245,240,232,0.3)',
@@ -1289,7 +1289,7 @@ function EducationTab() {
                                         border: '1px solid rgba(255,94,26,0.15)',
                                         color: 'rgba(245,240,232,0.85)',
                                         fontFamily: 'monospace',
-                                        fontSize: 13,
+                                        fontSize: 16,
                                         outline: 'none',
                                     }}
                                 >
@@ -1431,7 +1431,7 @@ function TechStackTab() {
                 <span
                     style={{
                         fontFamily: 'monospace',
-                        fontSize: 10,
+                        fontSize: 14,
                         letterSpacing: '0.2em',
                         textTransform: 'uppercase',
                         color: 'rgba(245,240,232,0.3)',
@@ -1446,7 +1446,7 @@ function TechStackTab() {
                     <div
                         style={{
                             fontFamily: 'monospace',
-                            fontSize: 9,
+                            fontSize: 14,
                             letterSpacing: '0.25em',
                             textTransform: 'uppercase',
                             color: 'rgba(255,94,26,0.4)',
@@ -1492,7 +1492,7 @@ function TechStackTab() {
                                         />
                                         <span
                                             style={{
-                                                fontSize: 13,
+                                                fontSize: 16,
                                                 fontWeight: 700,
                                                 color: 'rgba(245,240,232,0.85)',
                                             }}
@@ -1567,7 +1567,7 @@ function TechStackTab() {
                                 <label
                                     style={{
                                         fontFamily: 'monospace',
-                                        fontSize: 9,
+                                        fontSize: 14,
                                         letterSpacing: '0.2em',
                                         textTransform: 'uppercase',
                                         color: 'rgba(245,240,232,0.3)',
@@ -1589,7 +1589,7 @@ function TechStackTab() {
                                         border: '1px solid rgba(255,94,26,0.15)',
                                         color: 'rgba(245,240,232,0.85)',
                                         fontFamily: 'monospace',
-                                        fontSize: 13,
+                                        fontSize: 16,
                                         outline: 'none',
                                     }}
                                 >
@@ -1616,7 +1616,7 @@ function TechStackTab() {
                             <label
                                 style={{
                                     fontFamily: 'monospace',
-                                    fontSize: 9,
+                                    fontSize: 14,
                                     letterSpacing: '0.2em',
                                     textTransform: 'uppercase',
                                     color: 'rgba(245,240,232,0.3)',
@@ -1665,7 +1665,7 @@ function TechStackTab() {
                                         border: '1px solid rgba(255,94,26,0.15)',
                                         color: 'rgba(245,240,232,0.85)',
                                         fontFamily: 'monospace',
-                                        fontSize: 13,
+                                        fontSize: 16,
                                         outline: 'none',
                                     }}
                                 />
@@ -1725,7 +1725,7 @@ function AboutTab() {
             <div
                 style={{
                     fontFamily: 'monospace',
-                    fontSize: 11,
+                    fontSize: 14,
                     color: 'rgba(245,240,232,0.3)',
                 }}
             >
@@ -1827,7 +1827,7 @@ function AboutTab() {
                     <span
                         style={{
                             fontFamily: 'monospace',
-                            fontSize: 10,
+                            fontSize: 14,
                             color: '#4ade80',
                             letterSpacing: '0.15em',
                         }}
@@ -1884,7 +1884,7 @@ function MessagesTab() {
                 <span
                     style={{
                         fontFamily: 'monospace',
-                        fontSize: 10,
+                        fontSize: 14,
                         letterSpacing: '0.2em',
                         textTransform: 'uppercase',
                         color: 'rgba(245,240,232,0.3)',
@@ -1940,7 +1940,7 @@ function MessagesTab() {
                                 <div>
                                     <span
                                         style={{
-                                            fontSize: 13,
+                                            fontSize: 16,
                                             fontWeight: 700,
                                             color: 'rgba(245,240,232,0.85)',
                                         }}
@@ -1950,7 +1950,7 @@ function MessagesTab() {
                                     <span
                                         style={{
                                             fontFamily: 'monospace',
-                                            fontSize: 10,
+                                            fontSize: 14,
                                             color: 'rgba(245,240,232,0.3)',
                                             marginLeft: 10,
                                         }}
@@ -1969,7 +1969,7 @@ function MessagesTab() {
                                 <span
                                     style={{
                                         fontFamily: 'monospace',
-                                        fontSize: 9,
+                                        fontSize: 14,
                                         color: 'rgba(245,240,232,0.2)',
                                     }}
                                 >
@@ -2012,7 +2012,7 @@ function MessagesTab() {
                                     <div
                                         style={{
                                             fontFamily: 'monospace',
-                                            fontSize: 10,
+                                            fontSize: 14,
                                             color: 'rgba(255,94,26,0.5)',
                                             marginBottom: 8,
                                         }}
@@ -2022,7 +2022,7 @@ function MessagesTab() {
                                 )}
                                 <p
                                     style={{
-                                        fontSize: 13,
+                                        fontSize: 16,
                                         color: 'rgba(245,240,232,0.5)',
                                         lineHeight: 1.75,
                                         margin: 0,
@@ -2036,7 +2036,7 @@ function MessagesTab() {
                                         display: 'inline-block',
                                         marginTop: 12,
                                         fontFamily: 'monospace',
-                                        fontSize: 10,
+                                        fontSize: 14,
                                         letterSpacing: '0.15em',
                                         textTransform: 'uppercase',
                                         color: '#ff5e1a',
@@ -2053,7 +2053,7 @@ function MessagesTab() {
                     <div
                         style={{
                             fontFamily: 'monospace',
-                            fontSize: 11,
+                            fontSize: 14,
                             color: 'rgba(245,240,232,0.2)',
                             padding: 20,
                             textAlign: 'center',
@@ -2106,7 +2106,7 @@ function QuoteTab() {
             <div
                 style={{
                     fontFamily: 'monospace',
-                    fontSize: 11,
+                    fontSize: 14,
                     color: 'rgba(245,240,232,0.3)',
                 }}
             >
@@ -2135,7 +2135,7 @@ function QuoteTab() {
                 <div
                     style={{
                         fontFamily: 'monospace',
-                        fontSize: 9,
+                        fontSize: 14,
                         letterSpacing: '0.2em',
                         textTransform: 'uppercase',
                         color: 'rgba(255,94,26,0.4)',
@@ -2177,7 +2177,7 @@ function QuoteTab() {
                     <span
                         style={{
                             fontFamily: 'monospace',
-                            fontSize: 10,
+                            fontSize: 14,
                             letterSpacing: '0.2em',
                             textTransform: 'uppercase',
                             color: 'rgba(255,94,26,0.6)',
@@ -2217,7 +2217,7 @@ function QuoteTab() {
                     <span
                         style={{
                             fontFamily: 'monospace',
-                            fontSize: 10,
+                            fontSize: 14,
                             color: '#4ade80',
                             letterSpacing: '0.15em',
                         }}
@@ -2340,7 +2340,7 @@ export default function Dashboard() {
                         <div
                             style={{
                                 fontFamily: 'monospace',
-                                fontSize: 12,
+                                fontSize: 15,
                                 fontWeight: 800,
                                 letterSpacing: '0.15em',
                                 textTransform: 'uppercase',
@@ -2353,7 +2353,7 @@ export default function Dashboard() {
                             <div
                                 style={{
                                     fontFamily: 'monospace',
-                                    fontSize: 9,
+                                    fontSize: 14,
                                     letterSpacing: '0.15em',
                                     color: 'rgba(245,240,232,0.25)',
                                     marginTop: 1,
@@ -2371,7 +2371,7 @@ export default function Dashboard() {
                         rel="noopener noreferrer"
                         style={{
                             fontFamily: 'monospace',
-                            fontSize: 10,
+                            fontSize: 14,
                             letterSpacing: '0.15em',
                             textTransform: 'uppercase',
                             color: 'rgba(245,240,232,0.3)',
@@ -2412,7 +2412,7 @@ export default function Dashboard() {
                                 alignItems: 'center',
                                 justifyContent: 'space-between',
                                 fontFamily: 'monospace',
-                                fontSize: 10,
+                                fontSize: 14,
                                 letterSpacing: '0.15em',
                                 textTransform: 'uppercase',
                                 color:
@@ -2438,7 +2438,7 @@ export default function Dashboard() {
                                     style={{
                                         background: 'rgba(255,94,26,0.2)',
                                         color: '#ff5e1a',
-                                        fontSize: 9,
+                                        fontSize: 14,
                                         fontWeight: 700,
                                         padding: '2px 7px',
                                         borderRadius: 10,
@@ -2466,7 +2466,7 @@ export default function Dashboard() {
                         <div
                             style={{
                                 fontFamily: 'monospace',
-                                fontSize: 9,
+                                fontSize: 14,
                                 letterSpacing: '0.3em',
                                 textTransform: 'uppercase',
                                 color: 'rgba(255,94,26,0.5)',
@@ -2537,7 +2537,7 @@ export default function Dashboard() {
                                 <div
                                     style={{
                                         fontFamily: 'monospace',
-                                        fontSize: 9,
+                                        fontSize: 14,
                                         letterSpacing: '0.2em',
                                         textTransform: 'uppercase',
                                         color: 'rgba(255,94,26,0.6)',
@@ -2567,7 +2567,7 @@ export default function Dashboard() {
                                             key={tip}
                                             style={{
                                                 fontFamily: 'monospace',
-                                                fontSize: 11,
+                                                fontSize: 14,
                                                 color: 'rgba(245,240,232,0.35)',
                                             }}
                                         >

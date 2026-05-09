@@ -248,7 +248,7 @@ export default function BlockMate() {
                                                     'bm-pulse 2s infinite',
                                             }}
                                         />
-                                        <span className="font-mono text-[8px] tracking-[0.15em] uppercase text-fg/30">
+                                        <span className="font-syne text-[8px] tracking-[0.15em] uppercase text-fg/30">
                                             Sadeepa's AI
                                         </span>
                                     </div>
@@ -334,7 +334,7 @@ export default function BlockMate() {
                                 onChange={(e) => setInput(e.target.value)}
                                 onKeyDown={(e) => e.key === 'Enter' && send()}
                                 placeholder="Ask about Sadeepa..."
-                                className="flex-1 bg-transparent text-[12px] text-fg/80 placeholder:text-fg/20 outline-none font-mono tracking-[0.03em]"
+                                className="flex-1 bg-transparent text-[12px] text-fg/80 placeholder:text-fg/20 outline-none font-syne tracking-[0.03em]"
                             />
                             <button
                                 onClick={send}
@@ -370,7 +370,7 @@ export default function BlockMate() {
 
                         {/* Footer */}
                         <div className="px-4 pb-2.5 flex-shrink-0">
-                            <p className="font-mono text-[8px] tracking-[0.12em] text-fg/15 text-center uppercase">
+                            <p className="font-syne text-[8px] tracking-[0.12em] text-fg/15 text-center uppercase">
                                 Powered by BlockMate AI · Built for Sadeepa
                             </p>
                         </div>

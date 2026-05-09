@@ -169,7 +169,7 @@ function ProjectPopup({
             }}
         >
             <span
-                className="font-mono text-[9px] tracking-[0.2em] uppercase"
+                className="font-syne text-[9px] tracking-[0.2em] uppercase"
                 style={{ color: 'rgba(255,94,26,0.4)' }}
             >
                 Preview
@@ -245,7 +245,7 @@ function ProjectPopup({
                     }}
                 >
                     <span
-                        className="font-mono text-[9px] tracking-[0.15em] uppercase"
+                        className="font-syne text-[9px] tracking-[0.15em] uppercase"
                         style={{ color: 'rgba(245,240,232,0.4)' }}
                     >
                         {project?.year}
@@ -255,7 +255,7 @@ function ProjectPopup({
                             href={project.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-1.5 font-mono text-[9px] tracking-[0.18em] uppercase transition-colors duration-200"
+                            className="flex items-center gap-1.5 font-syne text-[9px] tracking-[0.18em] uppercase transition-colors duration-200"
                             style={{
                                 color: 'rgba(255,94,26,0.9)',
                                 pointerEvents: 'auto',
@@ -266,7 +266,7 @@ function ProjectPopup({
                     )}
                     {!project?.url && (
                         <span
-                            className="font-mono text-[9px] tracking-[0.18em] uppercase"
+                            className="font-syne text-[9px] tracking-[0.18em] uppercase"
                             style={{ color: 'rgba(255,94,26,0.3)' }}
                         >
                             Coming soon
@@ -429,7 +429,7 @@ export default function Projects({
                             onMouseEnter={() => handleMouseEnter(p, i)}
                             onMouseLeave={handleMouseLeave}
                         >
-                            <span className="font-mono text-[10px] md:text-[11px] text-or/35 tracking-[0.12em]">
+                            <span className="font-syne text-[10px] md:text-[11px] text-or/35 tracking-[0.12em]">
                                 {p.number}
                             </span>
                             <div>

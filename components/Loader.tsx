@@ -174,13 +174,13 @@ export default function Loader({ onComplete }: LoaderProps) {
             <div className="flex flex-col items-center gap-2 mb-6 z-10">
                 <div className="flex items-center gap-3">
                     <span
-                        className="font-mono text-[11px] tracking-[0.4em] uppercase"
+                        className="font-syne text-[11px] tracking-[0.4em] uppercase"
                         style={{ color: 'rgba(255,94,26,0.6)' }}
                     >
                         Loading
                     </span>
                     <span
-                        className="font-mono text-[11px] tracking-[0.1em]"
+                        className="font-syne text-[11px] tracking-[0.1em]"
                         style={{ color: '#ff5e1a' }}
                     >
                         {percent}%
@@ -341,7 +341,7 @@ export default function Loader({ onComplete }: LoaderProps) {
                     style={{ background: 'rgba(255,94,26,0.2)' }}
                 />
                 <span
-                    className="font-mono text-[11px] tracking-[0.25em] uppercase"
+                    className="font-syne text-[11px] tracking-[0.25em] uppercase"
                     style={{ color: 'rgba(245,240,232,0.25)' }}
                 >
                     sadeepa.me | portfolio

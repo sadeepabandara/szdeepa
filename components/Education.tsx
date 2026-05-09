@@ -262,7 +262,7 @@ export default function Education({ data }: { data?: EduItem[] }) {
                                                 className={`flex flex-col ${isTop ? 'items-start pb-8' : 'items-start pt-8'}`}
                                             >
                                                 <span
-                                                    className="font-mono text-[11px] tracking-[0.22em] uppercase mb-3 block"
+                                                    className="font-syne text-[11px] tracking-[0.22em] uppercase mb-3 block"
                                                     style={{ color: 'var(--or)' }}
                                                 >
                                                     {item.period}
@@ -326,7 +326,7 @@ export default function Education({ data }: { data?: EduItem[] }) {
                             className="border-l-2 pl-5"
                             style={{ borderColor: 'rgba(235,89,57,0.4)' }}
                         >
-                            <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-or block mb-1">
+                            <span className="font-syne text-[10px] tracking-[0.2em] uppercase text-or block mb-1">
                                 {item.period}
                             </span>
                             <h3 className="text-[18px] font-extrabold tracking-[-0.02em] mb-1">

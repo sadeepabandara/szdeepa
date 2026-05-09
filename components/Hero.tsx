@@ -331,7 +331,7 @@ export default function Hero({ animate }: HeroProps) {
                             onClick={() => {
                                 void toggleSound();
                             }}
-                            className="absolute right-full top-1/2 -translate-y-1/2 mr-2 whitespace-nowrap font-mono text-[8px] tracking-[0.18em] uppercase text-or/70 hover:text-or transition-colors duration-200"
+                            className="absolute right-full top-1/2 -translate-y-1/2 mr-2 whitespace-nowrap font-syne text-[8px] tracking-[0.18em] uppercase text-or/70 hover:text-or transition-colors duration-200"
                             aria-label="Tap for sound"
                         >
                             Tap for sound
@@ -343,7 +343,7 @@ export default function Hero({ animate }: HeroProps) {
                 <div className="w-px h-[52px] bg-or/20 relative overflow-hidden">
                     <div className="scroll-bar-inner absolute top-[-100%] left-0 w-full h-full bg-or" />
                 </div>
-                <span className="font-mono text-[9px] tracking-[0.25em] text-fg/30 [writing-mode:vertical-rl]">
+                <span className="font-syne text-[9px] tracking-[0.25em] text-fg/30 [writing-mode:vertical-rl]">
                     Scroll
                 </span>
             </div>
