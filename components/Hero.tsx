@@ -66,6 +66,54 @@ export default function Hero({ animate }: HeroProps) {
     const descRef = useRef<HTMLParagraphElement>(null);
     const btnsRef = useRef<HTMLDivElement>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
+    const audioRef = useRef<HTMLAudioElement>(null);
+    const [soundEnabled, setSoundEnabled] = useState(false);
+    const [autoplayBlocked, setAutoplayBlocked] = useState(false);
+
+    const tryStartAudio = async () => {
+        const audio = audioRef.current;
+        if (!audio) return;
+
+        try {
+            audio.muted = false;
+            audio.volume = 0.40;
+            await audio.play();
+            setAutoplayBlocked(false);
+        } catch {
+            // Keep muted fallback active and ask for a tap.
+            audio.muted = true;
+            audio.volume = 0;
+            setAutoplayBlocked(true);
+        }
+    };
+
+    // Start audio after loader; if blocked, show tap prompt.
+    useEffect(() => {
+        const audio = audioRef.current;
+        if (!audio || !soundEnabled || !animate) return;
+
+        void tryStartAudio();
+    }, [animate, soundEnabled]);
+
+    const toggleSound = async () => {
+        const audio = audioRef.current;
+        const nextEnabled = !soundEnabled;
+        setSoundEnabled(nextEnabled);
+
+        if (!audio) return;
+
+        if (!nextEnabled) {
+            // Keep timeline running silently so resume continues from same point.
+            audio.muted = true;
+            audio.volume = 0;
+            setAutoplayBlocked(false);
+            return;
+        }
+
+        if (animate) {
+            await tryStartAudio();
+        }
+    };
 
     useEffect(() => {
         if (!animate) return;
@@ -229,11 +277,69 @@ export default function Hero({ animate }: HeroProps) {
                 </div>
             </div>
 
-            {/* Scroll indicator — hidden on small mobile */}
+            {/* Sound toggle + Scroll indicator — hidden on small mobile */}
             <div
                 ref={scrollRef}
-                className="hidden sm:flex absolute right-6 md:right-14 bottom-12 md:bottom-16 z-[2] flex-col items-center gap-2.5 opacity-0"
+                className="hidden sm:flex absolute right-6 md:right-14 bottom-12 md:bottom-16 z-[2] flex-col items-center gap-4 opacity-0"
             >
+                {/* Sound toggle */}
+                <div className="relative">
+                    <button
+                        onClick={() => {
+                            void toggleSound();
+                        }}
+                        className={`w-8 h-8 flex items-center justify-center rounded-full transition-all duration-300 ${
+                            soundEnabled
+                                ? 'bg-or text-bg'
+                                : 'border border-or/30 text-or/50 hover:border-or/70 hover:text-or'
+                        }`}
+                        title={
+                            soundEnabled
+                                ? autoplayBlocked
+                                    ? 'Sound blocked by browser: click to retry'
+                                    : 'Sound on'
+                                : 'Sound off'
+                        }
+                        aria-label="Toggle ambient sound"
+                    >
+                        <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                        >
+                            {soundEnabled ? (
+                                <>
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                                    <path d="M15.54 5.47a9 9 0 0 1 0 12.06" />
+                                    <path d="M19.07 4.93a16 16 0 0 1 0 14.14" />
+                                </>
+                            ) : (
+                                <>
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                                    <line x1="23" y1="9" x2="17" y2="15" />
+                                    <line x1="17" y1="9" x2="23" y2="15" />
+                                </>
+                            )}
+                        </svg>
+                    </button>
+
+                    {animate && !soundEnabled && (
+                        <button
+                            onClick={() => {
+                                void toggleSound();
+                            }}
+                            className="absolute right-full top-1/2 -translate-y-1/2 mr-2 whitespace-nowrap font-mono text-[8px] tracking-[0.18em] uppercase text-or/70 hover:text-or transition-colors duration-200"
+                            aria-label="Tap for sound"
+                        >
+                            Tap for sound
+                        </button>
+                    )}
+                </div>
+
+                {/* Scroll indicator */}
                 <div className="w-px h-[52px] bg-or/20 relative overflow-hidden">
                     <div className="scroll-bar-inner absolute top-[-100%] left-0 w-full h-full bg-or" />
                 </div>
@@ -241,6 +347,24 @@ export default function Hero({ animate }: HeroProps) {
                     Scroll
                 </span>
             </div>
+
+            {/* Ambient audio — loops continuously when enabled */}
+            <audio
+                ref={audioRef}
+                loop
+                autoPlay
+                muted={!soundEnabled}
+                playsInline
+                preload="auto"
+                src="/ambient.mp3"
+                style={{
+                    position: 'absolute',
+                    width: 0,
+                    height: 0,
+                    opacity: 0,
+                    pointerEvents: 'none',
+                }}
+            />
         </section>
     );
 }

@@ -88,6 +88,7 @@ export default function BlockMate() {
 
     const bottomRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
+    const wrapperRef = useRef<HTMLDivElement>(null);
     const panelRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -96,6 +97,30 @@ export default function BlockMate() {
 
     useEffect(() => {
         if (open) setTimeout(() => inputRef.current?.focus(), 300);
+    }, [open]);
+
+    useEffect(() => {
+        if (!open) return;
+
+        const handlePointerDown = (event: MouseEvent | TouchEvent) => {
+            const target = event.target;
+
+            if (
+                target instanceof Node &&
+                wrapperRef.current &&
+                !wrapperRef.current.contains(target)
+            ) {
+                setOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handlePointerDown);
+        document.addEventListener('touchstart', handlePointerDown);
+
+        return () => {
+            document.removeEventListener('mousedown', handlePointerDown);
+            document.removeEventListener('touchstart', handlePointerDown);
+        };
     }, [open]);
 
     const send = async () => {
@@ -167,7 +192,7 @@ export default function BlockMate() {
             `}</style>
 
             {/* Trigger button */}
-            <div className="relative">
+            <div ref={wrapperRef} className="relative">
                 <button
                     onClick={() => setOpen((o) => !o)}
                     className="bm-trigger relative flex items-center justify-center rounded-full border border-or/30 hover:border-or/70"

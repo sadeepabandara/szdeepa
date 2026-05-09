@@ -1,77 +1,87 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 
-export default function Cursor() {
-    const dotRef = useRef<HTMLDivElement>(null);
-    const ringRef = useRef<HTMLDivElement>(null);
+export default function Cursor({ hidden = false }: { hidden?: boolean }) {
+    const x = useMotionValue(-100);
+    const y = useMotionValue(-100);
+    const lastPointerRef = useRef({ x: -10000, y: -10000 });
+
+    // Spring config that gives the backOut elastic lag feel
+    const springX = useSpring(x, { stiffness: 120, damping: 18, mass: 0.8 });
+    const springY = useSpring(y, { stiffness: 120, damping: 18, mass: 0.8 });
 
     useEffect(() => {
-        let mx = 0,
-            my = 0,
-            rx = 0,
-            ry = 0;
-        let raf: number;
-
         const onMove = (e: MouseEvent) => {
-            mx = e.clientX;
-            my = e.clientY;
-            if (dotRef.current) {
-                dotRef.current.style.left = mx + 'px';
-                dotRef.current.style.top = my + 'px';
-            }
+            x.set(e.clientX);
+            y.set(e.clientY);
         };
-
-        const loop = () => {
-            rx += (mx - rx) * 0.1;
-            ry += (my - ry) * 0.1;
-            if (ringRef.current) {
-                ringRef.current.style.left = rx + 'px';
-                ringRef.current.style.top = ry + 'px';
-            }
-            raf = requestAnimationFrame(loop);
-        };
-
-        const addHover = () => document.body.classList.add('ch');
-        const rmHover = () => document.body.classList.remove('ch');
-
         document.addEventListener('mousemove', onMove);
-        raf = requestAnimationFrame(loop);
+        return () => document.removeEventListener('mousemove', onMove);
+    }, [x, y]);
 
-        const targets = document.querySelectorAll(
-            'a, button, .proj-item, .svc-card',
-        );
-        targets.forEach((el) => {
-            el.addEventListener('mouseenter', addHover);
-            el.addEventListener('mouseleave', rmHover);
-        });
+    const [hoveringInteractive, setHoveringInteractive] = useState(false);
 
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const isInteractiveAt = (clientX: number, clientY: number) => {
+            const el = document.elementFromPoint(clientX, clientY) as HTMLElement | null;
+            const isInteractive = !!el?.closest?.('a, button, [role="button"], [data-cursor-hide]');
+            setHoveringInteractive(isInteractive);
+        };
+
+        // Track pointer and detect if it's over an interactive element
+        const onPointerMove = (e: PointerEvent) => {
+            lastPointerRef.current = { x: e.clientX, y: e.clientY };
+            isInteractiveAt(e.clientX, e.clientY);
+        };
+
+        const onScrollOrResize = () => {
+            const { x, y } = lastPointerRef.current;
+
+            if (x !== -10000 && y !== -10000) {
+                isInteractiveAt(x, y);
+                return;
+            }
+
+            // Fallback for cases where pointer didn't move yet.
+            const hovered = document.querySelectorAll(':hover');
+            const el = hovered[hovered.length - 1] as HTMLElement | undefined;
+            const isInteractive = !!el?.closest?.('a, button, [role="button"], [data-cursor-hide]');
+            setHoveringInteractive(isInteractive);
+        };
+
+        window.addEventListener('pointermove', onPointerMove, { passive: true });
+        window.addEventListener('scroll', onScrollOrResize, { passive: true });
+        window.addEventListener('resize', onScrollOrResize);
         return () => {
-            document.removeEventListener('mousemove', onMove);
-            cancelAnimationFrame(raf);
+            window.removeEventListener('pointermove', onPointerMove);
+            window.removeEventListener('scroll', onScrollOrResize);
+            window.removeEventListener('resize', onScrollOrResize);
         };
     }, []);
 
     return (
         <>
-            <div
-                ref={dotRef}
-                className="cur w-[6px] h-[6px] bg-or -mt-[3px] -ml-[3px]"
-                style={{ transition: 'transform 0.15s' }}
-                id="cd"
-            />
-            <div
-                ref={ringRef}
-                className="cur w-8 h-8 border border-or/50 -mt-4 -ml-4"
+            <motion.div
                 style={{
-                    transition:
-                        'width 0.3s cubic-bezier(.23,1,.32,1), height 0.3s cubic-bezier(.23,1,.32,1), margin 0.3s cubic-bezier(.23,1,.32,1)',
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    x: springX,
+                    y: springY,
+                    translateX: '-50%',
+                    translateY: '-50%',
+                    width: '33px',
+                    height: '33px',
+                    borderRadius: '50%',
+                    background: 'var(--or)',
+                    pointerEvents: 'none',
+                    zIndex: 9998,
+                    opacity: hidden || hoveringInteractive ? 0 : 1,
                 }}
-                id="cr"
             />
-            <style>{`
-        body.ch #cr { width:60px;height:60px;margin-top:-30px;margin-left:-30px;border-color:rgba(255,94,26,.2); }
-        body.ch #cd { transform:scale(0); }
-      `}</style>
+            <style>{`* { cursor: default !important; } a, button { cursor: pointer !important; }`}</style>
         </>
     );
 }

@@ -2,7 +2,6 @@
 import { useState, useCallback } from 'react';
 import Cursor from '@/components/Cursor';
 import SmoothScroll from '@/components/SmoothScroll';
-import CursorTrail from '@/components/CursorTrail';
 import Loader from '@/components/Loader';
 import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
@@ -77,18 +76,24 @@ export default function PageClient({
     quote,
 }: PageClientProps) {
     const [loaded, setLoaded] = useState(false);
+    const [cursorVisible, setCursorVisible] = useState(true);
     const onLoaderDone = useCallback(() => setLoaded(true), []);
+    const handleQuoteCursorVisibilityChange = useCallback((visible: boolean) => {
+        setCursorVisible(visible);
+    }, []);
 
     return (
         <>
             <SmoothScroll />
-            <CursorTrail />
-            <Cursor />
+            <Cursor hidden={!cursorVisible} />
             {!loaded && <Loader onComplete={onLoaderDone} />}
             <Nav visible={loaded} />
             <Hero animate={loaded} />
             <Ticker />
-            <Quote data={quote} />
+            <Quote
+                data={quote}
+                onCursorVisibilityChange={handleQuoteCursorVisibilityChange}
+            />
             <About data={about} />
             <Services data={services.length ? services : undefined} />
             <Projects projects={projects.length ? projects : undefined} />
