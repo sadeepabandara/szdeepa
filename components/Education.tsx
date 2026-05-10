@@ -98,6 +98,8 @@ export default function Education({ data }: { data?: EduItem[] }) {
             start: 'top top',
             end: `+=${tot + 100}`,
             pin: sticky,
+            anticipatePin: 1,
+            pinSpacing: true,
             scrub: 1.2,
             onUpdate: (self) => {
                 const p = self.progress;
@@ -145,7 +147,7 @@ export default function Education({ data }: { data?: EduItem[] }) {
             {/* ── DESKTOP ── */}
             <div
                 ref={stickyRef}
-                className="hidden md:block sticky top-0 h-screen border-t overflow-hidden"
+                className="hidden md:block h-screen border-t overflow-hidden"
                 style={{ background: 'var(--bg)', borderColor: 'var(--line)' }}
             >
                 {/* Header — fixed top left */}
