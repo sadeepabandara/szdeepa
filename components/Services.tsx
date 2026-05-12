@@ -159,7 +159,7 @@ export default function Services({ data }: ServicesProps) {
                 className="hidden md:flex sticky top-0 h-screen overflow-hidden flex-col justify-center border-t"
                 style={{ background: 'var(--bg)', borderColor: 'var(--line)' }}
             >
-                <div className="px-14 mb-11 flex justify-between items-end flex-shrink-0">
+                <div className="px-14 pt-8 mb-11 flex justify-between items-end flex-shrink-0">
                     <div>
                         <div className="fu text-[10px] tracking-[0.38em] uppercase text-or flex items-center gap-3 mb-3">
                             <span className="w-[18px] h-px bg-or" />
