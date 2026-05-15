@@ -2,7 +2,7 @@
 import { useRef, useState, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import SignatureTag from '@/components/SignatureTag';
+import Footer from '@/components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -133,7 +133,7 @@ export default function Contact() {
         <section
             id="contact"
             ref={sectionRef}
-            className="px-6 md:px-14 pt-16 md:pt-[120px] pb-12 md:pb-20 bg-bg2 border-t"
+            className="px-6 md:px-14 pt-16 md:pt-[120px] pb-4 md:pb-8 bg-bg2 border-t"
             style={{ borderColor: 'var(--line)' }}
         >
             {/* Two-col on desktop, stacked on mobile */}
@@ -301,44 +301,7 @@ export default function Contact() {
                 </div>
             </div>
 
-            {/* Footer */}
-            <div
-                className="pt-8 border-t flex flex-col sm:flex-row justify-between items-center gap-3"
-                style={{ borderColor: 'var(--line)' }}
-            >
-                <span className="font-syne text-[13px] tracking-[0.06em] text-fg/40">
-                    © 2026 Sadeepa — All rights reserved
-                </span>
-                <span
-                    className="inline-flex items-center"
-                    style={{ fontFamily: 'var(--font-syne), sans-serif' }}
-                >
-                    <span
-                        className="text-[11px] font-semibold"
-                        style={{
-                            color: 'rgba(245,240,232,0.3)',
-                            marginRight: 5,
-                        }}
-                    >
-                        ©
-                    </span>
-                    <span
-                        className="text-[11px] tracking-[0.12em] uppercase font-semibold"
-                        style={{
-                            color: 'rgba(245,240,232,0.3)',
-                            marginRight: 5,
-                        }}
-                    >
-                        Code by
-                    </span>
-                    <span
-                        className="text-[14px] font-bold tracking-[0.12em] uppercase"
-                        style={{ color: 'rgba(245,240,232,0.85)' }}
-                    >
-                        Sadeepa
-                    </span>
-                </span>
-            </div>
+            <Footer />
         </section>
     );
 }
