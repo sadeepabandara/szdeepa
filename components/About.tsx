@@ -94,6 +94,7 @@ export default function About({ data }: { data?: AboutData | null }) {
                         src="/about.png"
                         alt="Sadeepa"
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 420px"
                         className="object-cover object-[center_20%] transition-transform duration-[1200ms] ease-[cubic-bezier(.23,1,.32,1)] group-hover:scale-[1.04]"
                         style={{ filter: 'grayscale(10%) contrast(1.05)' }}
                     />
