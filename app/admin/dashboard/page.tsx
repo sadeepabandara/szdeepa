@@ -1,12 +1,7 @@
-'use client';
+"use client";
 import { useEffect, useState, useCallback } from 'react';
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from '@/lib/supabase';
 import { useRouter } from 'next/navigation';
-
-const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-);
 
 type Tab =
     | 'overview'
@@ -314,7 +309,7 @@ function ProjectsTab() {
 
     const save = async () => {
         setSaving(true);
-        const payload = {
+        const payload: any = {
             number: form.number,
             title: form.title,
             tags: form.tags
@@ -322,9 +317,9 @@ function ProjectsTab() {
                 .map((t) => t.trim())
                 .filter(Boolean),
             year: form.year,
-            url: form.url || null,
-            image: form.image || null,
         };
+        if (form.url) payload.url = form.url;
+        if (form.image) payload.image = form.image;
         if (editing)
             await supabase
                 .from('projects')
