@@ -193,13 +193,16 @@ export default function Quote({ data, onCursorVisibilityChange }: QuoteProps) {
             ══════════════════════════════════════════════ */}
             <motion.div
                 className="absolute inset-0 z-10"
+                animate={{
+                    WebkitMaskPosition: `${mouse.x - maskSize / 2}px ${mouse.y - maskSize / 2}px`,
+                    WebkitMaskSize: `${maskSize}px`,
+                } as any}
+                transition={{ type: 'tween', ease: 'backOut', duration: 0.5 }}
                 style={{
                     WebkitMaskImage: "url('/mask.svg')",
                     maskImage: "url('/mask.svg')",
                     WebkitMaskRepeat: 'no-repeat',
                     maskRepeat: 'no-repeat',
-                    WebkitMaskPosition: `${mouse.x - maskSize / 2}px ${mouse.y - maskSize / 2}px`,
-                    WebkitMaskSize: `${maskSize}px`,
                     backgroundColor: 'var(--or)',
                 }}
             >
